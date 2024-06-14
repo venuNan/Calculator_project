@@ -110,8 +110,14 @@ document.getElementById("del").onclick = function() {
 
 document.getElementById("equalto").onclick = function() {
     try {
-        result = eval(cal_expression.join("")).toString();
-        document.getElementById("display").innerHTML = result;
+        if(cal_expression.length>0){
+            result = eval(cal_expression.join("")).toString();
+            document.getElementById("display").innerHTML = result;
+        }
+        else{
+            document.getElementById("display").innerHTML = result;
+        }
+        
     } catch (e) {
         document.getElementById("display").innerHTML = "Invalid Syantax";
 
